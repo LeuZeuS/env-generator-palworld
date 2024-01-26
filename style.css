@@ -1,0 +1,96 @@
+/* Utilisation des couleurs de Palworld */
+:root {
+    --palworld-orange: #F5A623;
+    --palworld-blue: #00BFFF;
+    --palworld-brown: #8B4513;
+}
+
+/* Brighter versions for hover states */
+:root {
+    --hover-orange: #FFC048; /* Brighter orange */
+    --hover-blue: #33CFFF; /* Brighter blue */
+    --hover-brown: #A0522D; /* Brighter brown */
+}
+
+body {
+    background-color: #f8f9fa; /* Un fond clair pour que les couleurs se démarquent */
+}
+
+h1, .card-header {
+    background-color: var(--palworld-orange);
+    color: white;
+}
+
+.card {
+    border-color: var(--palworld-brown); /* Accentuation subtile */
+}
+
+.label, .form-control {
+    color: var(--palworld-brown);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: .5rem;
+    font-weight: bold; /* Rend le texte du label en gras */
+    #color: var(--palworld-brown); /* Utilisation de la couleur marron pour le texte */
+}
+
+.btn-primary {
+    background-color: var(--palworld-blue);
+    border-color: var(--palworld-blue);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-blue);
+    border-color: var(--hover-blue);
+}
+
+.btn-success {
+    background-color: var(--palworld-orange);
+    border-color: var(--palworld-orange);
+}
+
+.btn-success:hover {
+    background-color: var(--hover-orange);
+    border-color: var(--hover-orange);
+}
+
+.btn-info {
+    background-color: var(--palworld-brown);
+    border-color: var(--palworld-brown);
+}
+
+.btn-info:hover {
+    background-color: var(--hover-brown);
+    border-color: var(--hover-brown);
+}
+
+.modal-content {
+    border-color: var(--palworld-blue); /* Lien avec l'élément eau */
+}
+
+.modal-header {
+    background-color: var(--palworld-blue);
+    color: white;
+}
+
+/* Assurez-vous d'inclure une fonction darken() dans votre CSS ou de remplacer les valeurs manuellement */
+
+#titleHeader {
+    background-image: url('palworld-key-artwork.jpg'); /* Assurez-vous que le nom du fichier correspond exactement */
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Ajustez en fonction de vos besoins */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 4px solid var(--palworld-brown);
+}
+
+.card {
+    overflow: hidden;
+}

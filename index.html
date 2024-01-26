@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur de Variables d'Environnement</title>
+    <!-- Intégration de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header" id="titleHeader">
+
+			</div>
+            <div class="card-body">
+                <form id="envEditor">
+                    <!-- Les champs de variables seront générés ici par JavaScript -->
+                </form>
+                <div class="mt-4 text-right">
+                    <button class="btn btn-primary" onclick="openModal()">Coller .env</button>
+                    <button class="btn btn-success" onclick="generateEnvFile()">Télécharger .env</button>
+                    <button class="btn btn-info" onclick="copyToClipboard()">Copier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale pour coller le contenu .env -->
+    <div id="envModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Coller le contenu du fichier .env</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <textarea id="envContent" class="form-control" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="populateForm()">Appliquer</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<object id="jsonData" type="application/json" title="data.json" data="data.json" style="display:none;"></object>
+	
+	<!-- Pied de page -->
+<footer class="text-center mt-4">
+    <p>Made by LZS &#169; - 2024</p>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
