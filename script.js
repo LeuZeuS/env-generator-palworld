@@ -15,12 +15,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			let inputElement;
 
-			if (variable['Allowed Value'] === 'Float') {
-				inputElement = document.createElement('input');
-				inputElement.type = 'number';
-				inputElement.className = 'form-control';
-				inputElement.value = variable['Default Value'];
-				inputElement.step = '0.01'; 
+			if (variable['Allowed Value'] === 'Float' || variable['Allowed Value'] === 'Integer') {
+                let step = 1;
+                if(variable['Allowed Value'] === 'Float'){
+                    step=0.01;
+                }
+                if(variable.hasOwnProperty('max')){
+                    createInputWithSlider(variable,step);
+                }else{
+                    inputElement = document.createElement('input');
+				    inputElement.type = 'number';
+				    inputElement.className = 'form-control';
+				    inputElement.value = variable['Default Value'];
+				    inputElement.step = step; 
+                }
+				
 			} else if (variable['Allowed Value'] === 'Enum') {
 				inputElement = document.createElement('select');
 				inputElement.className = 'form-control';
@@ -50,6 +59,52 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error loading the JSON file:', error);
         });
 });
+
+function createInputWithSlider(variable, step) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'input-group';
+
+    const numberInput = document.createElement('input');
+    numberInput.type = 'number';
+    numberInput.className = 'form-control';
+    numberInput.value = variable['Default Value'];
+    numberInput.step = step;
+    numberInput.id = variable['Variable'];
+    numberInput.name = variable['Variable'];
+    wrapper.appendChild(numberInput);
+
+    if (variable.hasOwnProperty('max')) {
+        const slider = document.createElement('input');
+        slider.type = 'range';
+        slider.className = 'custom-range';
+        slider.min = variable['Default Value'];
+        slider.max = variable['max'];
+        slider.value = variable['Default Value'];
+        slider.step = step;
+        wrapper.appendChild(slider);
+
+        const resetButton = document.createElement('button');
+        resetButton.type = 'button';
+        resetButton.className = 'btn btn-secondary ml-2';
+        resetButton.textContent = 'Reset';
+        resetButton.onclick = () => {
+            numberInput.value = variable['Default Value'];
+            slider.value = variable['Default Value'];
+        };
+        wrapper.appendChild(resetButton);
+
+        // Synchronize number input and slider
+        numberInput.addEventListener('input', () => {
+            slider.value = numberInput.value;
+        });
+
+        slider.addEventListener('input', () => {
+            numberInput.value = slider.value;
+        });
+    }
+
+    return wrapper;
+}
 	
 function generateEnvFile() {
     let content = '';
