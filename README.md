@@ -1,6 +1,4 @@
-# Générateur de fichier .env pour docker
-
-Générateur de fichier .env pour Palworld.
+# Générateur de fichier .env pour Palworld.
 
 Les variables d'environnement sont basés sur le projet https://github.com/jammsen/docker-palworld-dedicated-server.
 
