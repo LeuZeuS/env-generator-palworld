@@ -5,105 +5,119 @@
         "Description": "Choose one of the following:\nNone\nNormal\nDifficult",
         "Default Value": "None",
         "Allowed Value": "Enum",
-		"Options": "Choose one of the following:\nNone\nNormal\nDifficult"
+        "Options": "Choose one of the following:\nNone\nNormal\nDifficult"
     },
     {
         "Variable": "DAYTIME_SPEEDRATE",
         "Game setting": "DayTimeSpeedRate",
         "Description": "Day time speed - Smaller number means shorter days",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "5"
     },
     {
         "Variable": "NIGHTTIME_SPEEDRATE",
         "Game setting": "NightTimeSpeedRate",
         "Description": "Night time speed - Smaller number means shorter nights",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "5"
     },
     {
         "Variable": "EXP_RATE",
         "Game setting": "ExpRate",
         "Description": "EXP rate",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "20"
     },
     {
         "Variable": "PAL_CAPTURE_RATE",
         "Game setting": "PalCaptureRate",
         "Description": "Pal capture rate",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "20"
     },
     {
         "Variable": "PAL_SPAWN_NUM_RATE",
         "Game setting": "PalSpawnNumRate",
         "Description": "Pal appearance rate",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "5"
     },
     {
         "Variable": "PAL_DAMAGE_RATE_ATTACK",
         "Game setting": "PalDamageRateAttack",
         "Description": "Damage from pals multiplier",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "PAL_DAMAGE_RATE_DEFENSE",
         "Game setting": "PalDamageRateDefense",
         "Description": "Damage to pals multiplier",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "3"
     },
     {
         "Variable": "PLAYER_DAMAGE_RATE_ATTACK",
         "Game setting": "PlayerDamageRateAttack",
         "Description": "Damage from player multiplier",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "PLAYER_DAMAGE_RATE_DEFENSE",
         "Game setting": "PlayerDamageRateDefense",
         "Description": "Damage to player multiplier",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "3"
     },
     {
         "Variable": "PLAYER_STOMACH_DECREASE_RATE",
         "Game setting": "PlayerStomachDecreaceRate",
         "Description": "Player hunger depletion rate",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "3"
     },
     {
         "Variable": "PLAYER_STAMINA_DECREACE_RATE",
         "Game setting": "PlayerStaminaDecreaceRate",
         "Description": "Player stamina reduction rate",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "3"
     },
     {
         "Variable": "PLAYER_AUTO_HP_REGENE_RATE",
         "Game setting": "PlayerAutoHPRegeneRate",
         "Description": "Player auto HP regeneration rate",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "PLAYER_AUTO_HP_REGENE_RATE_IN_SLEEP",
         "Game setting": "PlayerAutoHpRegeneRateInSleep",
         "Description": "Player sleep HP regeneration rate",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "PAL_STOMACH_DECREACE_RATE",
         "Game setting": "PalStomachDecreaceRate",
         "Description": "Pal hunger depletion rate",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "3"
     },
     {
         "Variable": "PAL_STAMINA_DECREACE_RATE",
@@ -117,56 +131,64 @@
         "Game setting": "PalAutoHPRegeneRate",
         "Description": "Pal auto HP regeneration rate",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "PAL_AUTO_HP_REGENE_RATE_IN_SLEEP",
         "Game setting": "PalAutoHpRegeneRateInSleep",
         "Description": "Pal sleep health regeneration rate (in Palbox)",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "BUILD_OBJECT_DAMAGE_RATE",
         "Game setting": "BuildObjectDamageRate",
         "Description": "Damage to structure multiplier",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "BUILD_OBJECT_DETERIORATION_DAMAGE_RATE",
         "Game setting": "PalAutoHpRegeneRateInSleep",
         "Description": "Structure determination rate",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "COLLECTION_DROP_RATE",
         "Game setting": "CollectionDropRate",
         "Description": "Getherable items multiplier",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "COLLECTION_OBJECT_HP_RATE",
         "Game setting": "CollectionObjectHpRate",
         "Description": "Getherable objects HP multiplier",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "COLLECTION_OBJECT_RESPAWN_SPEED_RATE",
         "Game setting": "CollectionObjectRespawnSpeedRate",
         "Description": "Getherable objects respawn interval",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "ENEMY_DROP_ITEM_RATE",
         "Game setting": "EnemyDropItemRate",
         "Description": "Dropped Items multiplier",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "DEATH_PENALTY",
@@ -174,7 +196,7 @@
         "Description": "None : No lost\nItem : Lost item without equipment\nItemAndEquipment : Lost item and equipment\nAll: Lost All item, equipment, pal(in inventory)",
         "Default Value": "All",
         "Allowed Value": "Enum",
-		"Options": "None\nItem\nItemAndEquipment\nAll"
+        "Options": "None\nItem\nItemAndEquipment\nAll"
     },
     {
         "Variable": "ENABLE_PLAYER_TO_PLAYER_DAMAGE",
@@ -223,35 +245,40 @@
         "Game setting": "DropItemMaxNum",
         "Description": "Maximum number of drops in the world",
         "Default Value": "3000",
-        "Allowed Value": "Integer"
+        "Allowed Value": "Integer",
+        "max": "5000"
     },
     {
         "Variable": "DROP_ITEM_MAX_NUM_UNKO",
         "Game setting": "DropItemMaxNum",
         "Description": "Maximum number of UNKO drops in the world",
         "Default Value": "100",
-        "Allowed Value": "Integer"
+        "Allowed Value": "Integer",
+        "max": "5000"
     },
     {
         "Variable": "BASE_CAMP_MAX_NUM",
         "Game setting": "BaseCampMaxNum",
         "Description": "Maximum number of base camps",
         "Default Value": "128",
-        "Allowed Value": "Integer"
+        "Allowed Value": "Integer",
+        "max": "256"
     },
     {
         "Variable": "BASE_CAMP_WORKER_MAXNUM",
         "Game setting": "BaseCampWorkerMaxNum",
         "Description": "Maximum number of workers",
         "Default Value": "15",
-        "Allowed Value": "Integer"
+        "Allowed Value": "Integer",
+        "max": "20"
     },
     {
         "Variable": "DROP_ITEM_ALIVE_MAX_HOURS",
         "Game setting": "DropItemAliveMaxHours",
         "Description": "Time it takes for items to despawn in hours",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "AUTO_RESET_GUILD_NO_ONLINE_PLAYERS",
@@ -265,28 +292,32 @@
         "Game setting": "AutoResetGuildTimeNoOnlinePlayers",
         "Description": "Time to automatically reset guild when no players are online",
         "Default Value": "72.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "216"
     },
     {
         "Variable": "GUILD_PLAYER_MAX_NUM",
         "Game setting": "GuildPlayerMaxNum",
         "Description": "Max player of Guild",
         "Default Value": "20",
-        "Allowed Value": "Integer"
+        "Allowed Value": "Integer",
+        "max": "50"
     },
     {
         "Variable": "PAL_EGG_DEFAULT_HATCHING_TIME",
         "Game setting": "PalEggDefaultHatchingTime",
         "Description": "Time(h) to incubate massive egg",
         "Default Value": "72.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "144"
     },
     {
         "Variable": "WORK_SPEED_RATE",
         "Game setting": "WorkSpeedRate",
         "Description": "Work speed muliplier",
         "Default Value": "1.000000",
-        "Allowed Value": "Float"
+        "Allowed Value": "Float",
+        "max": "10"
     },
     {
         "Variable": "IS_MULTIPLAY",
@@ -349,14 +380,16 @@
         "Game setting": "CoopPlayerMaxNum",
         "Description": "Maximum number of players in a guild",
         "Default Value": "8",
-        "Allowed Value": "Integer"
+        "Allowed Value": "Integer",
+        "max": "12"
     },
     {
         "Variable": "MAX_PLAYERS",
         "Game setting": "ServerPlayerMaxNum",
         "Description": "Maximum number of people who can join the server",
         "Default Value": "15",
-        "Allowed Value": "Integer"
+        "Allowed Value": "Integer",
+        "max": "96"
     },
     {
         "Variable": "SERVER_NAME",
@@ -373,11 +406,60 @@
         "Allowed Value": "String"
     },
     {
+        "Variable": "ADMIN_PASSWORD",
+        "Game setting": "server admin password",
+        "Description": "AdminPassword",
+        "Default Value": "adminPasswordHere",
+        "Allowed Value": "String"
+    },
+    {
+        "Variable": "SERVER_PASSWORD",
+        "Game setting": "AdminPassword",
+        "Description": "Set the server password.",
+        "Default Value": "serverPasswordHere",
+        "Allowed Value": "String"
+    },
+    {
+        "Variable": "PUBLIC_PORT",
+        "Game setting": "public port",
+        "Description": "Public port number",
+        "Default Value": "8211",
+        "Allowed Value": "Integer"
+    },
+    {
+        "Variable": "PUBLIC_IP",
+        "Game setting": "public ip",
+        "Description": "Public IP",
+        "Default Value": "",
+        "Allowed Value": "String"
+    },
+    {
+        "Variable": "RCON_ENABLED",
+        "Game setting": "RCONEnabled",
+        "Description": "Enable RCON - Use ADMIN_PASSWORD to login",
+        "Default Value": "FALSE",
+        "Allowed Value": "Boolean"
+    },
+    {
+        "Variable": "RCON_PORT",
+        "Game setting": "RCONPort",
+        "Description": "Port number for RCON",
+        "Default Value": "25575",
+        "Allowed Value": "Integer"
+    },
+    {
         "Variable": "REGION",
         "Game setting": "Region",
         "Description": "Area",
         "Default Value": "",
         "Allowed Value": "String"
+    },
+    {
+        "Variable": "USEAUTH",
+        "Game setting": "bUseAuth",
+        "Description": "Use authentication",
+        "Default Value": "TRUE",
+        "Allowed Value": "Boolean"
     },
     {
         "Variable": "BAN_LIST_URL",

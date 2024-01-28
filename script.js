@@ -15,13 +15,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			let inputElement;
 
-			if (variable['Allowed Value'] === 'Float') {
-				inputElement = document.createElement('input');
-				inputElement.type = 'number';
-				inputElement.className = 'form-control';
-				inputElement.value = variable['Default Value'];
-				inputElement.step = '0.01'; 
-			} else if (variable['Allowed Value'] === 'Enum') {
+			if (variable['Allowed Value'] === 'Float' || variable['Allowed Value'] === 'Integer') {
+                let step = 1;
+                if(variable['Allowed Value'] === 'Float'){
+                    step=0.01;
+                }
+                if(variable.hasOwnProperty('max')){
+                    wrapper = createInputWithSlider(variable,step);
+                }else{
+                    inputElement = document.createElement('input');
+				    inputElement.type = 'number';
+				    inputElement.className = 'form-control';
+				    inputElement.value = variable['Default Value'];
+				    inputElement.step = step; 
+                }
+				
+			}else if (variable['Allowed Value'] === 'Boolean') {
+                inputElement = createBooleanInput(variable);
+            } else if (variable['Allowed Value'] === 'Enum') {
 				inputElement = document.createElement('select');
 				inputElement.className = 'form-control';
 				const options = variable['Options'].split('\n');
@@ -39,17 +50,101 @@ document.addEventListener('DOMContentLoaded', function() {
 				inputElement.className = 'form-control';
 				inputElement.value = variable['Default Value'];
 			}
-
-			inputElement.id = variable['Variable'];
-			inputElement.name = variable['Variable'];
-			formGroup.appendChild(inputElement);
-			form.appendChild(formGroup);
+            if(!variable.hasOwnProperty('max')){
+                inputElement.id = variable['Variable'];
+                inputElement.name = variable['Variable'];
+                formGroup.appendChild(inputElement);
+                form.appendChild(formGroup);
+            }else{
+                formGroup.appendChild(wrapper);
+                form.appendChild(formGroup);
+            }
         });
     })
         .catch(error => {
             console.error('Error loading the JSON file:', error);
         });
 });
+
+function createBooleanInput(variable) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'form-check form-check-inline';
+
+    // Création du bouton radio "Oui"
+    const radioYes = createRadioButton(variable['Variable'], 'Oui', true);
+    wrapper.appendChild(radioYes.label);
+
+    // Création du bouton radio "Non"
+    const radioNo = createRadioButton(variable['Variable'], 'Non', false);
+    wrapper.appendChild(radioNo.label);
+
+    return wrapper;
+}
+
+function createRadioButton(name, label, isChecked) {
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.className = 'form-check-input';
+    input.name = name;
+    input.value = label;
+    input.checked = isChecked;
+
+    const labelElement = document.createElement('label');
+    labelElement.className = 'form-check-label';
+    labelElement.appendChild(input);
+    labelElement.appendChild(document.createTextNode(label));
+
+    return { label: labelElement, input: input };
+}
+
+function createInputWithSlider(variable, step) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'input-group';
+
+    const numberInput = document.createElement('input');
+    numberInput.type = 'number';
+    numberInput.className = 'form-control';
+    numberInput.value = variable['Default Value'];
+    numberInput.step = step;
+    numberInput.id = variable['Variable'];
+    numberInput.name = variable['Variable'];
+    wrapper.appendChild(numberInput);
+
+    if (variable.hasOwnProperty('max')) {
+        const slider = document.createElement('input');
+        slider.type = 'range';
+        slider.className = 'custom-range';
+        slider.min = 0;
+        slider.max = variable['max'];
+        slider.value = variable['Default Value'];
+        slider.step = step;
+        wrapper.appendChild(slider);
+
+        const resetButton = document.createElement('button');
+        resetButton.type = 'button';
+        resetButton.className = 'btn btn-secondary ml-2';
+        resetButton.innerHTML = '<i class="fas fa-sync-alt"></i>'; // Utilisation de l'icône Font Awesome
+        resetButton.style.color = 'var(--palworld-orange)'; // Appliquer la couleur
+        resetButton.style.backgroundColor = 'transparent'; // Fond transparent
+        resetButton.style.border = 'none'; // Aucune bordure
+        resetButton.onclick = () => {
+            numberInput.value = variable['Default Value'];
+            slider.value = variable['Default Value'];
+        };
+        wrapper.appendChild(resetButton);
+
+        // Synchronize number input and slider
+        numberInput.addEventListener('input', () => {
+            slider.value = numberInput.value;
+        });
+
+        slider.addEventListener('input', () => {
+            numberInput.value = slider.value;
+        });
+    }
+
+    return wrapper;
+}
 	
 function generateEnvFile() {
     let content = '';
