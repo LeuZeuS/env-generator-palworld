@@ -373,11 +373,60 @@
         "Allowed Value": "String"
     },
     {
+        "Variable": "ADMIN_PASSWORD",
+        "Game setting": "server admin password",
+        "Description": "AdminPassword",
+        "Default Value": "adminPasswordHere",
+        "Allowed Value": "String"
+    },
+    {
+        "Variable": "SERVER_PASSWORD",
+        "Game setting": "AdminPassword",
+        "Description": "Set the server password.",
+        "Default Value": "serverPasswordHere",
+        "Allowed Value": "String"
+    },
+    {
+        "Variable": "PUBLIC_PORT",
+        "Game setting": "public port",
+        "Description": "Public port number",
+        "Default Value": "8211",
+        "Allowed Value": "Integer"
+    },
+    {
+        "Variable": "PUBLIC_IP",
+        "Game setting": "public ip",
+        "Description": "Public IP",
+        "Default Value": "",
+        "Allowed Value": "String"
+    },
+    {
+        "Variable": "RCON_ENABLED",
+        "Game setting": "RCONEnabled",
+        "Description": "Enable RCON - Use ADMIN_PASSWORD to login",
+        "Default Value": "FALSE",
+        "Allowed Value": "Boolean"
+    },
+    {
+        "Variable": "RCON_PORT",
+        "Game setting": "RCONPort",
+        "Description": "Port number for RCON",
+        "Default Value": "25575",
+        "Allowed Value": "Integer"
+    },
+    {
         "Variable": "REGION",
         "Game setting": "Region",
         "Description": "Area",
         "Default Value": "",
         "Allowed Value": "String"
+    },
+    {
+        "Variable": "USEAUTH",
+        "Game setting": "bUseAuth",
+        "Description": "Use authentication",
+        "Default Value": "TRUE",
+        "Allowed Value": "Boolean"
     },
     {
         "Variable": "BAN_LIST_URL",
