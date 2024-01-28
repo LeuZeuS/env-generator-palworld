@@ -34,7 +34,7 @@ label {
     margin-top: 10px;
     margin-bottom: .5rem;
     font-weight: bold; /* Rend le texte du label en gras */
-    #color: var(--palworld-brown); /* Utilisation de la couleur marron pour le texte */
+    /*color: var(--palworld-brown); /* Utilisation de la couleur marron pour le texte */
 }
 
 .btn-primary {
