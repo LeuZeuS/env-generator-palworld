@@ -71,22 +71,22 @@ function createBooleanInput(variable) {
     wrapper.className = 'form-check form-check-inline';
 
     // Création du bouton radio "Oui"
-    const radioYes = createRadioButton(variable['Variable'], 'Oui', true);
+    const radioYes = createRadioButton(variable['Variable'], 'Oui', 'true', true);
     wrapper.appendChild(radioYes.label);
 
     // Création du bouton radio "Non"
-    const radioNo = createRadioButton(variable['Variable'], 'Non', false);
+    const radioNo = createRadioButton(variable['Variable'], 'Non', 'false', false);
     wrapper.appendChild(radioNo.label);
 
     return wrapper;
 }
 
-function createRadioButton(name, label, isChecked) {
+function createRadioButton(name, label, value, isChecked) {
     const input = document.createElement('input');
     input.type = 'radio';
     input.className = 'form-check-input';
     input.name = name;
-    input.value = label;
+    input.value = value;
     input.checked = isChecked;
 
     const labelElement = document.createElement('label');
